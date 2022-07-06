@@ -8,7 +8,10 @@ body {
 	height: 100vh;
 	width: 100vw;
 	z-index: 1;
-	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .clickable {
@@ -29,12 +32,7 @@ body {
 	display: block;
 	background-color: black;
 	color: white;
-	text-align: center;
-	vertical-align: middle;
 	line-height: 100px;
-	margin: 0 auto;
-	z-index: +20;
-	margin-top: calc(50vh - 50px);
 }
 
 .resourcesBar {
@@ -92,25 +90,6 @@ body {
 }
 
 
-/* .storage-increaser {
-	height: 100%;
-	width: 20%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-} */
-
-.StorageIncreaserButton {
-	display: flex;
-	background-color: white;
-	height: 40px;
-	Width: 40px;
-	border: 3px solid grey;
-	z-index: 10;
-	align-items: center;
-	justify-content: center;
-	font-size: 30px;
-}
 
 .Adventure {
 	Height: 100%;
