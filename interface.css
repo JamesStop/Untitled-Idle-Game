@@ -11,14 +11,14 @@ body {
 	cursor: pointer;
 }
 
-.Main0 {
+.main0 {
 	box-sizing: border-box;
 	display: flex;
 	height: calc(100% - 50px);
 	width: 100%;
 }
 
-.WakeUp {
+.wake-up {
 	box-sizing: border-box;
 	justify-content: center;
 	height: 100px;
@@ -35,7 +35,7 @@ body {
 	margin-top: calc(50vh - 50px);
 }
 
-.ResourcesBar {
+.resourcesBar {
 	box-sizing: border-box;
 	height: 100%;
 	width: 20%;
@@ -46,7 +46,7 @@ body {
 }
 
 
-.ResourceCollecter {
+.resource-collecter {
 	box-sizing: border-box;
 	height: 13%;
 	min-height: 100px;
@@ -62,12 +62,12 @@ body {
 	padding: 6px;
 }
 
-.ResourceCollectorTopHalf {
+.resource-collector-top-half {
 	height: 50%;
 	width: 100%;
 }
 
-.ResourceCollecterSelecter {
+.resource-collector-selector {
 	box-sizing: border-box;
 	background-color: white;
 	height: 100%;
@@ -76,7 +76,7 @@ body {
 	text-align: center;
 }
 
-.ResourceCollectorBottomHalf {
+.resource-collector-bottom-half {
 	box-sizing: border-box;
 	display: flex;
 	height: 50%;
@@ -85,7 +85,7 @@ body {
 	align-items: center;
 }
 
-.StorageText {
+.storage-text {
 	display: flex;
 	height: 100%;
 	width: 80%;
@@ -94,13 +94,13 @@ body {
 }
 
 
-.StorageIncraser {
+/* .storage-increaser {
 	height: 100%;
 	width: 20%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
+} */
 
 .StorageIncreaserButton {
 	box-sizing: border-box;
@@ -270,7 +270,6 @@ body {
    -moz-user-select: -moz-none;
    -khtml-user-select: none;
    -webkit-user-select: none;
-
    /*
      Introduced in IE 10.
      See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
@@ -287,4 +286,8 @@ body {
 
 .colorActive {
 	background-color: rgb(245, 235, 189);
+}
+
+.hidden {
+	display: none;
 }
