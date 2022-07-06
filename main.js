@@ -208,14 +208,7 @@ function buyStorage(Storer) {
 		);
 		document.getElementById(Storer).innerHTML = CurrentCurrency[Storer];
 	}
-	document.getElementById('CurrencyMax.Gold').innerHTML = CurrencyMax.Gold;
-	document.getElementById('CurrencyMax.Mythril').innerHTML =
-		CurrencyMax.Mythril;
-	document.getElementById('CurrencyMax.Herb').innerHTML = CurrencyMax.Herb;
-	document.getElementById('CurrencyMax.Yew').innerHTML = CurrencyMax.Yew;
-	document.getElementById('CurrencyMax.Crystal').innerHTML =
-		CurrencyMax.Crystal;
-	document.getElementById('CurrencyMax.Arcana').innerHTML = CurrencyMax.Arcana;
+	document.getElementById(`CurrencyMax.${Storer}`).innerHTML = CurrencyMax[Storer];
 }
 
 function buyProduction(Producer) {

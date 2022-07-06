@@ -1,194 +1,335 @@
 <html lang="en">
-  <head>
-    <title>Practice</title>
-    <link rel="stylesheet" type="text/css" href="interface.css" />
-  </head>
+	<head>
+		<title>Practice</title>
+		<link rel="stylesheet" type="text/css" href="interface.css" />
+	</head>
 
-
-
-
-  <body class="unselectable">
-	<button id="Waker" class="WakeUp clickable" onclick="WakeeWakee()">Wake Up</button>
-	<div id="Wakey1" class="Main0" style="display: none">
-		<div class="ResourcesBar">
-			<div class="ResourceCollecter">
-				<div class="ResourceCollectorTopHalf">
-					<div class="ResourceCollecterSelecter clickable colorInactive" id="GoldBar" onclick="SetGetResources('Gold')">Collect Gold<br><span id="PerSec.Gold">0</span> Gold/sec
-					</div>
-				</div>
-				<div class="ResourceCollectorBottomHalf">
-					<div class="StorageText">
-						<div><span id="Gold">0</span> / <span id="CurrencyMax.Gold">250</span> Gold
+	<body class="unselectable">
+		<button id="Waker" class="WakeUp clickable" onclick="WakeeWakee()">
+			Wake Up
+		</button>
+		<div id="Wakey1" class="Main0" style="display: none">
+			<div class="ResourcesBar">
+				<div class="ResourceCollecter">
+					<div class="ResourceCollectorTopHalf">
+						<div
+							class="ResourceCollecterSelecter clickable colorInactive"
+							id="GoldBar"
+							onclick="SetGetResources('Gold')"
+						>
+							Collect Gold<br /><span id="PerSec.Gold">0</span> Gold/sec
 						</div>
 					</div>
-					<div class="StorageIncreaser">
-						<div class="StorageIncreaserButton clickable" onclick="buyStorage('Gold')"><b>+</b></div>
-					</div>
-				</div>
-			</div>
-			<div class="ResourceCollecter">
-				<div class="ResourceCollectorTopHalf">
-					<div class="ResourceCollecterSelecter clickable colorInactive" id="MythrilBar" onclick="SetGetResources('Mythril')">Collect Mythril<br><span id="PerSec.Mythril">0</span> Mythril/sec
-					</div>
-				</div>
-				<div class="ResourceCollectorBottomHalf">
-					<div class="StorageText">
-						<div><span id="Mythril">0</span> / <span id="CurrencyMax.Mythril">250</span> Mythril
-						</div>
-					</div>
-					<div class="StorageIncreaser">
-						<div class="StorageIncreaserButton clickable" onclick="buyStorage('Mythril')"><b>+</b></div>
-					</div>
-				</div>
-			</div>
-			<div class="ResourceCollecter">
-				<div class="ResourceCollectorTopHalf">
-					<div class="ResourceCollecterSelecter clickable colorInactive" id="HerbBar" onclick="SetGetResources('Herb')">Collect Herb<br><span id="PerSec.Herb">0</span> Herb/sec
-					</div>
-				</div>
-				<div class="ResourceCollectorBottomHalf">
-					<div class="StorageText">
-						<div><span id="Herb">0</span> / <span id="CurrencyMax.Herb">250</span> Herb
-						</div>
-					</div>
-					<div class="StorageIncreaser">
-						<div class="StorageIncreaserButton clickable" onclick="buyStorage('Herb')"><b>+</b></div>
-					</div>
-				</div>
-			</div>
-			<div class="ResourceCollecter">
-				<div class="ResourceCollectorTopHalf">
-					<div class="ResourceCollecterSelecter clickable colorInactive" id="YewBar" onclick="SetGetResources('Yew')">Collect Yew<br><span id="PerSec.Yew">0</span> Yew/sec
-					</div>
-				</div>
-				<div class="ResourceCollectorBottomHalf">
-					<div class="StorageText">
-						<div><span id="Yew">0</span> / <span id="CurrencyMax.Yew">250</span> Yew
-						</div>
-					</div>
-					<div class="StorageIncreaser">
-						<div class="StorageIncreaserButton clickable" onclick="buyStorage('Yew')"><b>+</b></div>
-					</div>
-				</div>
-			</div>
-			<div class="ResourceCollecter">
-				<div class="ResourceCollectorTopHalf">
-					<div class="ResourceCollecterSelecter clickable colorInactive" id="CrystalBar" onclick="SetGetResources('Crystal')">Collect Crystal<br><span id="PerSec.Crystal">0</span> Crystal/sec
-					</div>
-				</div>
-				<div class="ResourceCollectorBottomHalf">
-					<div class="StorageText">
-						<div><span id="Crystal">0</span> / <span id="CurrencyMax.Crystal">250</span> Crystal
-						</div>
-					</div>
-					<div class="StorageIncreaser">
-						<div class="StorageIncreaserButton clickable" onclick="buyStorage('Crystal')"><b>+</b></div>
-					</div>
-				</div>
-			</div>
-			<div class="ResourceCollecter">
-				<div class="ResourceCollectorTopHalf">
-					<div class="ResourceCollecterSelecter clickable colorInactive" id="ArcanaBar" onclick="SetGetResources('Arcana')">Collect Arcana<br><span id="PerSec.Arcana">0</span> Arcana/sec
-					</div>
-				</div>
-				<div class="ResourceCollectorBottomHalf">
-					<div class="StorageText">
-						<div><span id="Arcana">0</span> / <span id="CurrencyMax.Arcana">250</span> Arcana
-						</div>
-					</div>
-					<div class="StorageIncreaser">
-						<div class="StorageIncreaserButton clickable" onclick="buyStorage('Arcana')"><b>+</b></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="Adventure">
-			<div class="Main1">
-				<div class="Something">
-				</div>
-				<div class="Stats">
-					<div class="MCStats">
-					</div>
-					<div class="EnemyStats">
-					</div>
-				</div>
-			</div>
-			<div class="Main2">
-				<div class="Main2TabsSelector">
-					<div class="Main2TabsSelectorButtons clickable" onclick="SelectUpgradesTab()"><span>Upgrades</span>
-					</div>
-					<div class="Main2TabsSelectorButtons clickable" onclick="SelectGolemsTab()"><span>Golems</span>
-					</div>
-					<div class="Main2TabsSelectorButtons clickable" onclick="SelectSpellBookTab()"><span>Spell Book</span>
-					</div>
-					<div class="Main2TabsSelectorButtons clickable" onclick="SelectSomethingTab()"><span>????</span>
-					</div>
-				</div>
-				<div>
-					<div id="UpgradesTab" class="Main2Tabs" style="display: flex">
-						<div id="StorageUpgrades" class="UpgradesColumn">
+					<div class="ResourceCollectorBottomHalf">
+						<div class="StorageText">
 							<div>
-								<span id="UpgradesTitle"><b><u>Storage</u></b></span>
-							</div>	
-							<div class="StorageUpgradeButton clickable" onclick="buyStorage('Gold')"><span>Bank</span>
-							</div>
-							<div class="StorageUpgradeButton clickable" onclick="buyStorage('Mythril')"><span>Forge</span>
-							</div>
-							<div class="StorageUpgradeButton clickable" onclick="buyStorage('Herb')"><span>Apothecary</span>
-							</div>
-							<div class="StorageUpgradeButton clickable" onclick="buyStorage('Yew')"><span>Log House</span>
-							</div>
-							<div class="StorageUpgradeButton clickable" onclick="buyStorage('Crystal')"><span>Crystal Cavern</span>
-							</div>
-							<div class="StorageUpgradeButton clickable" onclick="buyStorage('Arcana')"><span>Library</span>
+								<span id="Gold">0</span> /
+								<span id="CurrencyMax.Gold">250</span> Gold
 							</div>
 						</div>
-						<div id="ProductionUpgrades" class="UpgradesColumn">
-							<div><span id="UpgradesTitle"><b><u>Production</u></b></span>
-							</div>
-							<div class="ProductionUpgradeButton clickable" onclick="buyProduction('Gold')"><span>Mop</span>
-							</div>
-							<div class="ProductionUpgradeButton clickable" onclick="buyProduction('Mythril')"><span>Pickaxe</span>
-							</div>
-							<div class="ProductionUpgradeButton clickable" onclick="buyProduction('Herb')"><span>Secateur</span>
-							</div>
-							<div class="ProductionUpgradeButton clickable" onclick="buyProduction('Yew')"><span>Axe</span>
-							</div>
-							<div class="ProductionUpgradeButton clickable" onclick="buyProduction('Crystal')"><span>Chisel</span>
-							</div>
-							<div class="ProductionUpgradeButton clickable" onclick="buyProduction('Arcana')"><span>Tome</span>
+						<div class="StorageIncreaser">
+							<div
+								class="StorageIncreaserButton clickable"
+								onclick="buyStorage('Gold')"
+							>
+								<b>+</b>
 							</div>
 						</div>
 					</div>
-					<div id="GolemsTab" class="Main2Tabs" style="display: none">golems
+				</div>
+				<div class="ResourceCollecter">
+					<div class="ResourceCollectorTopHalf">
+						<div
+							class="ResourceCollecterSelecter clickable colorInactive"
+							id="MythrilBar"
+							onclick="SetGetResources('Mythril')"
+						>
+							Collect Mythril<br /><span id="PerSec.Mythril">0</span>
+							Mythril/sec
+						</div>
 					</div>
-					<div id="SpellBookTab" class="Main2Tabs" style="display: none">spellbook
+					<div class="ResourceCollectorBottomHalf">
+						<div class="StorageText">
+							<div>
+								<span id="Mythril">0</span> /
+								<span id="CurrencyMax.Mythril">250</span> Mythril
+							</div>
+						</div>
+						<div class="StorageIncreaser">
+							<div
+								class="StorageIncreaserButton clickable"
+								onclick="buyStorage('Mythril')"
+							>
+								<b>+</b>
+							</div>
+						</div>
 					</div>
-					<div id="SomethingTab" class="Main2Tabs" style="display: none">something
+				</div>
+				<div class="ResourceCollecter">
+					<div class="ResourceCollectorTopHalf">
+						<div
+							class="ResourceCollecterSelecter clickable colorInactive"
+							id="HerbBar"
+							onclick="SetGetResources('Herb')"
+						>
+							Collect Herb<br /><span id="PerSec.Herb">0</span> Herb/sec
+						</div>
+					</div>
+					<div class="ResourceCollectorBottomHalf">
+						<div class="StorageText">
+							<div>
+								<span id="Herb">0</span> /
+								<span id="CurrencyMax.Herb">250</span> Herb
+							</div>
+						</div>
+						<div class="StorageIncreaser">
+							<div
+								class="StorageIncreaserButton clickable"
+								onclick="buyStorage('Herb')"
+							>
+								<b>+</b>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="ResourceCollecter">
+					<div class="ResourceCollectorTopHalf">
+						<div
+							class="ResourceCollecterSelecter clickable colorInactive"
+							id="YewBar"
+							onclick="SetGetResources('Yew')"
+						>
+							Collect Yew<br /><span id="PerSec.Yew">0</span> Yew/sec
+						</div>
+					</div>
+					<div class="ResourceCollectorBottomHalf">
+						<div class="StorageText">
+							<div>
+								<span id="Yew">0</span> /
+								<span id="CurrencyMax.Yew">250</span> Yew
+							</div>
+						</div>
+						<div class="StorageIncreaser">
+							<div
+								class="StorageIncreaserButton clickable"
+								onclick="buyStorage('Yew')"
+							>
+								<b>+</b>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="ResourceCollecter">
+					<div class="ResourceCollectorTopHalf">
+						<div
+							class="ResourceCollecterSelecter clickable colorInactive"
+							id="CrystalBar"
+							onclick="SetGetResources('Crystal')"
+						>
+							Collect Crystal<br /><span id="PerSec.Crystal">0</span>
+							Crystal/sec
+						</div>
+					</div>
+					<div class="ResourceCollectorBottomHalf">
+						<div class="StorageText">
+							<div>
+								<span id="Crystal">0</span> /
+								<span id="CurrencyMax.Crystal">250</span> Crystal
+							</div>
+						</div>
+						<div class="StorageIncreaser">
+							<div
+								class="StorageIncreaserButton clickable"
+								onclick="buyStorage('Crystal')"
+							>
+								<b>+</b>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="ResourceCollecter">
+					<div class="ResourceCollectorTopHalf">
+						<div
+							class="ResourceCollecterSelecter clickable colorInactive"
+							id="ArcanaBar"
+							onclick="SetGetResources('Arcana')"
+						>
+							Collect Arcana<br /><span id="PerSec.Arcana">0</span> Arcana/sec
+						</div>
+					</div>
+					<div class="ResourceCollectorBottomHalf">
+						<div class="StorageText">
+							<div>
+								<span id="Arcana">0</span> /
+								<span id="CurrencyMax.Arcana">250</span> Arcana
+							</div>
+						</div>
+						<div class="StorageIncreaser">
+							<div
+								class="StorageIncreaserButton clickable"
+								onclick="buyStorage('Arcana')"
+							>
+								<b>+</b>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="Adventure">
+				<div class="Main1">
+					<div class="Something"></div>
+					<div class="Stats">
+						<div class="MCStats"></div>
+						<div class="EnemyStats"></div>
+					</div>
+				</div>
+				<div class="Main2">
+					<div class="Main2TabsSelector">
+						<div
+							class="Main2TabsSelectorButtons clickable"
+							onclick="SelectUpgradesTab()"
+						>
+							<span>Upgrades</span>
+						</div>
+						<div
+							class="Main2TabsSelectorButtons clickable"
+							onclick="SelectGolemsTab()"
+						>
+							<span>Golems</span>
+						</div>
+						<div
+							class="Main2TabsSelectorButtons clickable"
+							onclick="SelectSpellBookTab()"
+						>
+							<span>Spell Book</span>
+						</div>
+						<div
+							class="Main2TabsSelectorButtons clickable"
+							onclick="SelectSomethingTab()"
+						>
+							<span>????</span>
+						</div>
+					</div>
+					<div>
+						<div id="UpgradesTab" class="Main2Tabs" style="display: flex">
+							<div id="StorageUpgrades" class="UpgradesColumn">
+								<div>
+									<span id="UpgradesTitle"
+										><b><u>Storage</u></b></span
+									>
+								</div>
+								<div
+									class="StorageUpgradeButton clickable"
+									onclick="buyStorage('Gold')"
+								>
+									<span>Bank</span>
+								</div>
+								<div
+									class="StorageUpgradeButton clickable"
+									onclick="buyStorage('Mythril')"
+								>
+									<span>Forge</span>
+								</div>
+								<div
+									class="StorageUpgradeButton clickable"
+									onclick="buyStorage('Herb')"
+								>
+									<span>Apothecary</span>
+								</div>
+								<div
+									class="StorageUpgradeButton clickable"
+									onclick="buyStorage('Yew')"
+								>
+									<span>Log House</span>
+								</div>
+								<div
+									class="StorageUpgradeButton clickable"
+									onclick="buyStorage('Crystal')"
+								>
+									<span>Crystal Cavern</span>
+								</div>
+								<div
+									class="StorageUpgradeButton clickable"
+									onclick="buyStorage('Arcana')"
+								>
+									<span>Library</span>
+								</div>
+							</div>
+							<div id="ProductionUpgrades" class="UpgradesColumn">
+								<div>
+									<span id="UpgradesTitle"
+										><b><u>Production</u></b></span
+									>
+								</div>
+								<div
+									class="ProductionUpgradeButton clickable"
+									onclick="buyProduction('Gold')"
+								>
+									<span>Mop</span>
+								</div>
+								<div
+									class="ProductionUpgradeButton clickable"
+									onclick="buyProduction('Mythril')"
+								>
+									<span>Pickaxe</span>
+								</div>
+								<div
+									class="ProductionUpgradeButton clickable"
+									onclick="buyProduction('Herb')"
+								>
+									<span>Secateur</span>
+								</div>
+								<div
+									class="ProductionUpgradeButton clickable"
+									onclick="buyProduction('Yew')"
+								>
+									<span>Axe</span>
+								</div>
+								<div
+									class="ProductionUpgradeButton clickable"
+									onclick="buyProduction('Crystal')"
+								>
+									<span>Chisel</span>
+								</div>
+								<div
+									class="ProductionUpgradeButton clickable"
+									onclick="buyProduction('Arcana')"
+								>
+									<span>Tome</span>
+								</div>
+							</div>
+						</div>
+						<div id="GolemsTab" class="Main2Tabs" style="display: none">
+							golems
+						</div>
+						<div id="SpellBookTab" class="Main2Tabs" style="display: none">
+							spellbook
+						</div>
+						<div id="SomethingTab" class="Main2Tabs" style="display: none">
+							something
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div id="Wakey2" class="Settings" style="display: none">
-		<div id="Settings1" class="SettingsButtons clickable">
-			<span class="SettingsButtonsText">Save</span>
+		<div id="Wakey2" class="Settings" style="display: none">
+			<div id="Settings1" class="SettingsButtons clickable">
+				<span class="SettingsButtonsText">Save</span>
+			</div>
+			<div id="Settings2" class="SettingsButtons clickable">
+				<span class="SettingsButtonsText">Export</span>
+			</div>
+			<div id="Settings3" class="SettingsButtons clickable">
+				<span class="SettingsButtonsText">Import</span>
+			</div>
+			<div id="Settings4" class="SettingsButtons clickable">
+				<span class="SettingsButtonsText">Achievements</span>
+			</div>
+			<div id="Settings5" class="SettingsButtons clickable">
+				<span class="SettingsButtonsText">Settings</span>
+			</div>
 		</div>
-		<div id="Settings2" class="SettingsButtons clickable">
-			<span class="SettingsButtonsText">Export</span>
-		</div>
-		<div id="Settings3" class="SettingsButtons clickable">
-			<span class="SettingsButtonsText">Import</span>
-		</div>
-		<div id="Settings4" class="SettingsButtons clickable">
-			<span class="SettingsButtonsText">Achievements</span>
-		</div>
-		<div id="Settings5" class="SettingsButtons clickable">
-			<span class="SettingsButtonsText">Settings</span>
-		</div>
-	</div>
-	
-	<script type="text/javascript" src="main.js"></script>
-  </body>
 
+		<script type="text/javascript" src="main.js"></script>
+	</body>
 </html>
