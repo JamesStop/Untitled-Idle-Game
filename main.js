@@ -81,10 +81,10 @@ var currencyMax = {
 	Arcana: 250,
 };
 
-function WakeeWakee() {
-	document.querySelector('#Wakey1').style.display = 'flex';
-	document.querySelector('#Wakey2').style.display = 'flex';
-	document.querySelector('#Waker').style.display = 'none';
+function wakeeWakee() {
+	document.querySelector('#wakey1').style.display = 'flex';
+	document.querySelector('#wakey2').style.display = 'flex';
+	document.querySelector('#waker').style.display = 'none';
 }
 
 function SelectUpgradesTab() {
