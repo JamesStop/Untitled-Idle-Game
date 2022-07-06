@@ -1,12 +1,12 @@
-var CurrentResourceCollecting;
+var currentResourceCollecting;
 
-var PlayerStats = {
-	Health: 100,
-	Mana: 0,
-	SpellPower: 1,
+var playerStats = {
+	health: 100,
+	mana: 0,
+	spellPower: 1,
 };
 
-var ResourceCollectionSpeed = {
+var resourceCollectionSpeed = {
 	Gold: 1,
 	Mythril: 1,
 	Herb: 1,
@@ -15,7 +15,7 @@ var ResourceCollectionSpeed = {
 	Arcana: 1,
 };
 
-var CurrentCurrency = {
+var currentCurrency = {
 	Gold: 0,
 	Mythril: 0,
 	Herb: 0,
@@ -24,7 +24,7 @@ var CurrentCurrency = {
 	Arcana: 0,
 };
 
-var PerSec = {
+var perSec = {
 	Gold: 0,
 	Mythril: 0,
 	Herb: 0,
@@ -33,7 +33,7 @@ var PerSec = {
 	Arcana: 0,
 };
 
-var CurrentStorage = {
+var currentStorage = {
 	Gold: 0,
 	Mythril: 0,
 	Herb: 0,
@@ -42,7 +42,7 @@ var CurrentStorage = {
 	Arcana: 0,
 };
 
-var StorageCost = {
+var storageCost = {
 	Base: 50,
 	Gold: 50,
 	Mythril: 50,
@@ -52,7 +52,7 @@ var StorageCost = {
 	Arcana: 50,
 };
 
-var CurrentProducer = {
+var currentProducer = {
 	Gold: 1,
 	Mythril: 1,
 	Herb: 1,
@@ -61,7 +61,7 @@ var CurrentProducer = {
 	Arcana: 1,
 };
 
-var ProducerCost = {
+var producerCost = {
 	Base: 100,
 	Gold: 100,
 	Mythril: 100,
@@ -71,7 +71,7 @@ var ProducerCost = {
 	Arcana: 100,
 };
 
-var CurrencyMax = {
+var currencyMax = {
 	Base: 250,
 	Gold: 250,
 	Mythril: 250,
@@ -152,83 +152,83 @@ function colorChange(id) {
 
 function SetGetResources(what) {
 	colorReset();
-	if (window.CurrentResourceCollecting == what) {
-		window.CurrentResourceCollecting = '';
+	if (window.currentResourceCollecting == what) {
+		window.currentResourceCollecting = '';
 	} else {
-		window.CurrentResourceCollecting = what;
+		window.currentResourceCollecting = what;
 		colorChange(what);
 	}
 }
 
 function CollectingResources(resource, number) {
-	if (CurrentCurrency[resource] + number < CurrencyMax[resource]) {
-		CurrentCurrency[resource] = CurrentCurrency[resource] + number;
-		PerSec[resource] = number;
+	if (currentCurrency[resource] + number < currencyMax[resource]) {
+		currentCurrency[resource] = currentCurrency[resource] + number;
+		perSec[resource] = number;
 	} else {
-		CurrentCurrency[resource] = CurrencyMax[resource];
-		PerSec[resource] = number;
+		currentCurrency[resource] = currencyMax[resource];
+		perSec[resource] = number;
 	}
 	if (resource != 'Gold') {
-		PerSec.Gold = 0;
+		perSec.Gold = 0;
 	}
 	if (resource != 'Mythril') {
-		PerSec.Mythril = 0;
+		perSec.Mythril = 0;
 	}
 	if (resource != 'Herb') {
-		PerSec.Herb = 0;
+		perSec.Herb = 0;
 	}
 	if (resource != 'Yew') {
-		PerSec.Yew = 0;
+		perSec.Yew = 0;
 	}
 	if (resource != 'Crystal') {
-		PerSec.Crystal = 0;
+		perSec.Crystal = 0;
 	}
 	if (resource != 'Arcana') {
-		PerSec.Arcana = 0;
+		perSec.Arcana = 0;
 	}
-	document.getElementById(resource).innerHTML = CurrentCurrency[resource];
-	document.getElementById('PerSec.Gold').innerHTML = PerSec.Gold;
-	document.getElementById('PerSec.Mythril').innerHTML = PerSec.Mythril;
-	document.getElementById('PerSec.Herb').innerHTML = PerSec.Herb;
-	document.getElementById('PerSec.Yew').innerHTML = PerSec.Yew;
-	document.getElementById('PerSec.Crystal').innerHTML = PerSec.Crystal;
-	document.getElementById('PerSec.Arcana').innerHTML = PerSec.Arcana;
-	
+	document.getElementById(resource).innerHTML = currentCurrency[resource];
+	document.getElementById('PerSec.Gold').innerHTML = perSec.Gold;
+	document.getElementById('PerSec.Mythril').innerHTML = perSec.Mythril;
+	document.getElementById('PerSec.Herb').innerHTML = perSec.Herb;
+	document.getElementById('PerSec.Yew').innerHTML = perSec.Yew;
+	document.getElementById('PerSec.Crystal').innerHTML = perSec.Crystal;
+	document.getElementById('PerSec.Arcana').innerHTML = perSec.Arcana;
 }
 
-function buyStorage(Storer) {
-	StorageCost[Storer] = Math.floor(
-		StorageCost.Base * Math.pow(2, CurrentStorage[Storer])
+function buyStorage(storer) {
+	storageCost[storer] = Math.floor(
+		storageCost.Base * Math.pow(2, currentStorage[storer])
 	);
-	if (CurrentCurrency[Storer] >= StorageCost[Storer]) {
-		CurrentStorage[Storer] = CurrentStorage[Storer] + 1;
-		CurrentCurrency[Storer] = CurrentCurrency[Storer] - StorageCost[Storer];
-		CurrencyMax[Storer] = Math.floor(
-			CurrencyMax.Base * Math.pow(2, CurrentStorage[Storer])
+	if (currentCurrency[storer] >= storageCost[storer]) {
+		currentStorage[storer] = currentStorage[storer] + 1;
+		currentCurrency[storer] = currentCurrency[storer] - storageCost[storer];
+		currencyMax[storer] = Math.floor(
+			currencyMax.Base * Math.pow(2, currentStorage[storer])
 		);
-		document.getElementById(Storer).innerHTML = CurrentCurrency[Storer];
+		document.getElementById(storer).innerHTML = currentCurrency[storer];
 	}
-	document.getElementById(`CurrencyMax.${Storer}`).innerHTML = CurrencyMax[Storer];
+	document.getElementById(`CurrencyMax.${storer}`).innerHTML =
+		currencyMax[storer];
 }
 
-function buyProduction(Producer) {
-	ProducerCost[Producer] = Math.floor(
-		ProducerCost.Base * Math.pow(1.5, CurrentProducer[Producer] - 1)
+function buyProduction(producer) {
+	producerCost[producer] = Math.floor(
+		producerCost.Base * Math.pow(1.5, currentProducer[producer] - 1)
 	);
-	if (CurrentCurrency[Producer] >= ProducerCost[Producer]) {
-		CurrentProducer[Producer] = CurrentProducer[Producer] + 1;
-		CurrentCurrency[Producer] =
-			CurrentCurrency[Producer] - ProducerCost[Producer];
-		ResourceCollectionSpeed[Producer] = ResourceCollectionSpeed[Producer] + 1;
-		document.getElementById(Producer).innerHTML = CurrentCurrency[Producer];
+	if (currentCurrency[producer] >= producerCost[producer]) {
+		currentProducer[producer] = currentProducer[producer] + 1;
+		currentCurrency[producer] =
+			currentCurrency[producer] - producerCost[producer];
+		resourceCollectionSpeed[producer] = resourceCollectionSpeed[producer] + 1;
+		document.getElementById(producer).innerHTML = currentCurrency[producer];
 	}
 }
 
 window.setInterval(function () {
-	if (CurrentResourceCollecting) {
+	if (currentResourceCollecting) {
 		CollectingResources(
-			CurrentResourceCollecting,
-			ResourceCollectionSpeed[CurrentResourceCollecting]
+			currentResourceCollecting,
+			resourceCollectionSpeed[currentResourceCollecting]
 		);
 	}
 }, 100);
