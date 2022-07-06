@@ -62,7 +62,7 @@ body {
 	padding: 6px;
 }
 
-.resourceCollectorTopHalf {
+.resource-collector-top-half {
 	height: 50%;
 	width: 100%;
 }
@@ -76,7 +76,7 @@ body {
 	text-align: center;
 }
 
-.ResourceCollectorBottomHalf {
+.resource-collector-bottom-half {
 	box-sizing: border-box;
 	display: flex;
 	height: 50%;
