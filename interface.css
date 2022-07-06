@@ -90,25 +90,6 @@ body {
 }
 
 
-/* .storage-increaser {
-	height: 100%;
-	width: 20%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-} */
-
-.StorageIncreaserButton {
-	display: flex;
-	background-color: white;
-	height: 40px;
-	Width: 40px;
-	border: 3px solid grey;
-	z-index: 10;
-	align-items: center;
-	justify-content: center;
-	font-size: 30px;
-}
 
 .Adventure {
 	Height: 100%;
