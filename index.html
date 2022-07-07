@@ -13,10 +13,10 @@
 		</button>
 		<div id="wakey1" class="main0" style="display: none">
 			<div class="resourcesBar">
-				<div class="resource-collecter">
+				<div class="resource-collector">
 					<div class="resource-collector-top-half">
 						<div
-							class="resource-collector-selector clickable colorInactive"
+							class="resource-collector-selector clickable color-inactive"
 							id="GoldBar"
 							onclick="SetGetResources('Gold')"
 						>
@@ -32,10 +32,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="resource-collecter">
+				<div class="resource-collector">
 					<div class="resource-collector-top-half">
 						<div
-							class="resource-collector-selector clickable colorInactive"
+							class="resource-collector-selector clickable color-inactive"
 							id="MythrilBar"
 							onclick="SetGetResources('Mythril')"
 						>
@@ -52,10 +52,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="resource-collecter">
+				<div class="resource-collector">
 					<div class="resource-collector-top-half">
 						<div
-							class="resource-collector-selector clickable colorInactive"
+							class="resource-collector-selector clickable color-inactive"
 							id="HerbBar"
 							onclick="SetGetResources('Herb')"
 						>
@@ -71,10 +71,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="resource-collecter">
+				<div class="resource-collector">
 					<div class="resource-collector-top-half">
 						<div
-							class="resource-collector-selector clickable colorInactive"
+							class="resource-collector-selector clickable color-inactive"
 							id="YewBar"
 							onclick="SetGetResources('Yew')"
 						>
@@ -90,10 +90,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="resource-collecter">
+				<div class="resource-collector">
 					<div class="resource-collector-top-half">
 						<div
-							class="resource-collector-selector clickable colorInactive"
+							class="resource-collector-selector clickable color-inactive"
 							id="CrystalBar"
 							onclick="SetGetResources('Crystal')"
 						>
@@ -110,10 +110,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="resource-collecter">
+				<div class="resource-collector">
 					<div class="resource-collector-top-half">
 						<div
-							class="resource-collector-selector clickable colorInactive"
+							class="resource-collector-selector clickable color-inactive"
 							id="ArcanaBar"
 							onclick="SetGetResources('Arcana')"
 						>
@@ -130,158 +130,158 @@
 					</div>
 				</div>
 			</div>
-			<div class="Adventure">
-				<div class="Main1">
-					<div class="Something"></div>
-					<div class="Stats">
-						<div class="MCStats"></div>
-						<div class="EnemyStats"></div>
+			<div class="adventure">
+				<div class="main1">
+					<div class="something"></div>
+					<div class="stats">
+						<div class="mc-stats"></div>
+						<div class="enemy-stats"></div>
 					</div>
 				</div>
-				<div class="Main2">
-					<div class="Main2TabsSelector">
+				<div class="main2">
+					<div class="main2-tabs-selector">
 						<div
-							class="Main2TabsSelectorButtons clickable"
+							class="main2-tabs-selector-buttons clickable"
 							onclick="SelectUpgradesTab()"
 						>
 							<span>Upgrades</span>
 						</div>
 						<div
-							class="Main2TabsSelectorButtons clickable"
+							class="main2-tabs-selector-buttons clickable"
 							onclick="SelectGolemsTab()"
 						>
 							<span>Golems</span>
 						</div>
 						<div
-							class="Main2TabsSelectorButtons clickable"
+							class="main2-tabs-selector-buttons clickable"
 							onclick="SelectSpellBookTab()"
 						>
 							<span>Spell Book</span>
 						</div>
 						<div
-							class="Main2TabsSelectorButtons clickable"
+							class="main2-tabs-selector-buttons clickable"
 							onclick="SelectSomethingTab()"
 						>
 							<span>????</span>
 						</div>
 					</div>
 					<div>
-						<div id="UpgradesTab" class="Main2Tabs" style="display: flex">
-							<div id="StorageUpgrades" class="UpgradesColumn">
+						<div id="UpgradesTab" class="main2-tabs" style="display: flex">
+							<div id="StorageUpgrades" class="upgrades-column">
 								<div>
-									<span id="UpgradesTitle"
+									<span class="upgrades-title"
 										><b><u>Storage</u></b></span
 									>
 								</div>
 								<div
-									class="StorageUpgradeButton clickable"
+									class="storage-upgrade-button clickable"
 									onclick="buyStorage('Gold')"
 								>
 									<span>Bank</span>
 								</div>
 								<div
-									class="StorageUpgradeButton clickable"
+									class="storage-upgrade-button clickable"
 									onclick="buyStorage('Mythril')"
 								>
 									<span>Forge</span>
 								</div>
 								<div
-									class="StorageUpgradeButton clickable"
+									class="storage-upgrade-button clickable"
 									onclick="buyStorage('Herb')"
 								>
 									<span>Apothecary</span>
 								</div>
 								<div
-									class="StorageUpgradeButton clickable"
+									class="storage-upgrade-button clickable"
 									onclick="buyStorage('Yew')"
 								>
 									<span>Log House</span>
 								</div>
 								<div
-									class="StorageUpgradeButton clickable"
+									class="storage-upgrade-button clickable"
 									onclick="buyStorage('Crystal')"
 								>
 									<span>Crystal Cavern</span>
 								</div>
 								<div
-									class="StorageUpgradeButton clickable"
+									class="storage-upgrade-button clickable"
 									onclick="buyStorage('Arcana')"
 								>
 									<span>Library</span>
 								</div>
 							</div>
-							<div id="ProductionUpgrades" class="UpgradesColumn">
+							<div id="production-upgrades" class="upgrades-column">
 								<div>
-									<span id="UpgradesTitle"
+									<span class="upgrades-title"
 										><b><u>Production</u></b></span
 									>
 								</div>
 								<div
-									class="ProductionUpgradeButton clickable"
+									class="production-upgrade-button clickable"
 									onclick="buyProduction('Gold')"
 								>
 									<span>Mop</span>
 								</div>
 								<div
-									class="ProductionUpgradeButton clickable"
+									class="production-upgrade-button clickable"
 									onclick="buyProduction('Mythril')"
 								>
 									<span>Pickaxe</span>
 								</div>
 								<div
-									class="ProductionUpgradeButton clickable"
+									class="production-upgrade-button clickable"
 									onclick="buyProduction('Herb')"
 								>
 									<span>Secateur</span>
 								</div>
 								<div
-									class="ProductionUpgradeButton clickable"
+									class="production-upgrade-button clickable"
 									onclick="buyProduction('Yew')"
 								>
 									<span>Axe</span>
 								</div>
 								<div
-									class="ProductionUpgradeButton clickable"
+									class="production-upgrade-button clickable"
 									onclick="buyProduction('Crystal')"
 								>
 									<span>Chisel</span>
 								</div>
 								<div
-									class="ProductionUpgradeButton clickable"
+									class="production-upgrade-button clickable"
 									onclick="buyProduction('Arcana')"
 								>
 									<span>Tome</span>
 								</div>
 							</div>
 						</div>
-						<div id="GolemsTab" class="Main2Tabs" style="display: none">
+						<div id="golems-tab" class="main2-tabs" style="display: none">
 							golems
 						</div>
-						<div id="SpellBookTab" class="Main2Tabs" style="display: none">
+						<div id="spell-book-tab" class="main2-tabs" style="display: none">
 							spellbook
 						</div>
-						<div id="SomethingTab" class="Main2Tabs" style="display: none">
+						<div id="something-tab" class="main2-tabs" style="display: none">
 							something
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div id="wakey2" class="Settings" style="display: none">
-			<div id="Settings1" class="SettingsButtons clickable">
-				<span class="SettingsButtonsText">Save</span>
+		<div id="wakey2" class="settings" style="display: none">
+			<div id="settings1" class="settings-buttons clickable">
+				<span class="settings-buttons-text">Save</span>
 			</div>
-			<div id="Settings2" class="SettingsButtons clickable">
-				<span class="SettingsButtonsText">Export</span>
+			<div id="settings2" class="settings-buttons clickable">
+				<span class="settings-buttons-text">Export</span>
 			</div>
-			<div id="Settings3" class="SettingsButtons clickable">
-				<span class="SettingsButtonsText">Import</span>
+			<div id="settings3" class="settings-buttons clickable">
+				<span class="settings-buttons-text">Import</span>
 			</div>
-			<div id="Settings4" class="SettingsButtons clickable">
-				<span class="SettingsButtonsText">Achievements</span>
+			<div id="settings4" class="settings-buttons clickable">
+				<span class="settings-buttons-text">Achievements</span>
 			</div>
-			<div id="Settings5" class="SettingsButtons clickable">
-				<span class="SettingsButtonsText">Settings</span>
+			<div id="settings5" class="settings-buttons clickable">
+				<span class="settings-buttons-text">Settings</span>
 			</div>
 		</div>
 

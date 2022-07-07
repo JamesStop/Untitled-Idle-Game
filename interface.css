@@ -45,7 +45,7 @@ body {
 }
 
 
-.resource-collecter {
+.resource-collector {
 	height: 13%;
 	min-height: 100px;
 	min-width: 250px;
@@ -91,51 +91,51 @@ body {
 
 
 
-.Adventure {
+.adventure {
 	Height: 100%;
 	Width: 80%;
 }
 
-.Main1 {
+.main1 {
 	display: flex;
 	height: 50%;
 	width: 100%;
 }
 
-.Something {
+.something {
 	height: 100%;
 	width: calc(100% - 300px);
 	border: 3px solid grey;
 	background-color: F4C6C6;
 }
 
-.Stats {
+.stats {
 	height: 100%;
 	width: 300px;	
 }
 
-.MCStats {
+.mc-stats {
 	height: 50%;
 	width: 100%;
 	background-color: CDF7D5;
 	border: 3px solid grey;
 }
 
-.EnemyStats {
+.enemy-stats {
 	height: 50%;
 	width: 100%;
 	background-color: CDF7D5;
 	border: 3px solid grey;
 }
 
-.Main2 {
+.main2 {
 	height: 50%;
 	width: 100%;
 	background-color: EAE1C7;
 	border: 3px solid grey;
 }
 
-.Main2TabsSelector {
+.main2-tabs-selector {
 	display: flex;
 	height: 50px;
 	width: calc(100% - 20px);
@@ -145,7 +145,7 @@ body {
 	margin-top: 10px;
 }
 
-.Main2TabsSelectorButtons {
+.main2-tabs-selector-buttons {
 	display: flex;
 	height: 100%;
 	width: 25%;
@@ -154,12 +154,12 @@ body {
 	justify-content: center;
 }
 
-.Main2Tabs {
+.main2-tabs {
 	height: calc(100% - 60px);
 	width: 100%;
 }
 
-.UpgradesColumn {
+.upgrades-column {
 	height: 100%;
 	width: 25%;
 	background-color: white;
@@ -173,11 +173,11 @@ body {
 	justify-content: center;
 }
 
-#UpgradesTitle {
+.upgrades-title {
 	font-size: 20px;
 }
 
-.StorageUpgradeButton {
+.storage-upgrade-button {
 	display: flex;
 	height: 100px;
 	width: 90%;
@@ -191,7 +191,7 @@ body {
 	justify-content: center;
 }
 
-.ProductionUpgradeButton {
+.production-upgrade-button {
 	display: flex;
 	height: 100px;
 	width: 90%;
@@ -205,12 +205,12 @@ body {
 	justify-content: center;
 }
 
-.Settings {
+.settings {
 	display: flex;
 	height: 50px;
 	width:100%;
 }
-.SettingsButtons {
+.settings-buttons {
 	display: flex;
 	height: 100%;
 	width: 20%;
@@ -219,7 +219,7 @@ body {
 	justify-content: center;
 }
 
-.SettingsButtonsText {
+.settings-buttons-text {
 	color: BD97B8;
 	display: flex;
 	align-items: center;
@@ -242,11 +242,11 @@ body {
 
 
 
-.colorInactive {
+.color-inactive {
 	background-color: white;
 }
 
-.colorActive {
+.color-active {
 	background-color: rgb(245, 235, 189);
 }
 

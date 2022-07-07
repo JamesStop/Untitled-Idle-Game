@@ -117,37 +117,37 @@ function SelectSomethingTab() {
 
 function colorReset() {
 	let resetFirst = document.querySelector('#GoldBar').classList;
-	resetFirst.remove('colorInactive');
-	resetFirst.remove('colorActive');
-	resetFirst.add('colorInactive');
+	resetFirst.remove('color-inactive');
+	resetFirst.remove('color-active');
+	resetFirst.add('color-inactive');
 	var resetSecond = document.querySelector('#MythrilBar').classList;
-	resetSecond.remove('colorInactive');
-	resetSecond.remove('colorActive');
-	resetSecond.add('colorInactive');
+	resetSecond.remove('color-inactive');
+	resetSecond.remove('color-active');
+	resetSecond.add('color-inactive');
 	var resetThird = document.querySelector('#HerbBar').classList;
-	resetThird.remove('colorInactive');
-	resetThird.remove('colorActive');
-	resetThird.add('colorInactive');
+	resetThird.remove('color-inactive');
+	resetThird.remove('color-active');
+	resetThird.add('color-inactive');
 	var resetFourth = document.querySelector('#YewBar').classList;
-	resetFourth.remove('colorInactive');
-	resetFourth.remove('colorActive');
-	resetFourth.add('colorInactive');
+	resetFourth.remove('color-inactive');
+	resetFourth.remove('color-active');
+	resetFourth.add('color-inactive');
 	var resetFourth = document.querySelector('#CrystalBar').classList;
-	resetFourth.remove('colorInactive');
-	resetFourth.remove('colorActive');
-	resetFourth.add('colorInactive');
+	resetFourth.remove('color-inactive');
+	resetFourth.remove('color-active');
+	resetFourth.add('color-inactive');
 	var resetFourth = document.querySelector('#ArcanaBar').classList;
-	resetFourth.remove('colorInactive');
-	resetFourth.remove('colorActive');
-	resetFourth.add('colorInactive');
+	resetFourth.remove('color-inactive');
+	resetFourth.remove('color-active');
+	resetFourth.add('color-inactive');
 }
 
 function colorChange(id) {
 	let changeId = `#${id}Bar`;
 	var changeBlue = document.querySelector(changeId).classList;
-	changeBlue.remove('colorInactive');
-	changeBlue.remove('colorActive');
-	changeBlue.add('colorActive');
+	changeBlue.remove('color-inactive');
+	changeBlue.remove('color-active');
+	changeBlue.add('color-active');
 }
 
 function SetGetResources(what) {
