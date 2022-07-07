@@ -87,34 +87,35 @@ function wakeeWakee() {
 	document.querySelector('#waker').style.display = 'none';
 }
 
-function SelectUpgradesTab() {
-	document.querySelector('#UpgradesTab').style.display = 'flex';
-	document.querySelector('#SpellBookTab').style.display = 'none';
-	document.querySelector('#GolemsTab').style.display = 'none';
-	document.querySelector('#SomethingTab').style.display = 'none';
+
+//Change tabs in upgrade+ area
+const tabsBars = document.querySelector('#main2-tabs-selector');
+tabsBars.addEventListener('click', selectTabs);
+function selectTabs(event) {
+	if (
+		event.target.id == 'upgrades-tab-selector' ||
+		event.target.id == 'golems-tab-selector' ||
+		event.target.id == 'spell-book-tab-selector' ||
+		event.target.id == 'something-tab-selector'
+	) {
+		const changingTabId = event.target.id;
+		const targetId = changingTabId.split('-');
+		targetId.pop();
+		const finalId = targetId.join('-');
+		const tabs = [
+			'#upgrades-tab',
+			'#spell-book-tab',
+			'#golems-tab',
+			'#something-tab',
+		];
+		tabs.map((tab) => {
+			document.querySelector(tab).style.display = 'none';
+		});
+		document.querySelector(`#${finalId}`).style.display = 'flex';
+	}
 }
 
-function SelectSpellBookTab() {
-	document.querySelector('#UpgradesTab').style.display = 'none';
-	document.querySelector('#SpellBookTab').style.display = 'flex';
-	document.querySelector('#GolemsTab').style.display = 'none';
-	document.querySelector('#SomethingTab').style.display = 'none';
-}
-
-function SelectGolemsTab() {
-	document.querySelector('#UpgradesTab').style.display = 'none';
-	document.querySelector('#SpellBookTab').style.display = 'none';
-	document.querySelector('#GolemsTab').style.display = 'flex';
-	document.querySelector('#SomethingTab').style.display = 'none';
-}
-
-function SelectSomethingTab() {
-	document.querySelector('#UpgradesTab').style.display = 'none';
-	document.querySelector('#SpellBookTab').style.display = 'none';
-	document.querySelector('#GolemsTab').style.display = 'none';
-	document.querySelector('#SomethingTab').style.display = 'flex';
-}
-
+//change colors on collection bars
 function colorReset() {
 	let resetFirst = document.querySelector('#GoldBar').classList;
 	resetFirst.remove('color-inactive');
